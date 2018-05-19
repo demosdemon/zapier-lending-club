@@ -27,7 +27,7 @@ const appTester = zapier.createAppTester(App);
 const bundle = {
   authData: {
     apiKey: process.env.LENDING_CLUB_API_KEY,
-    baseUrl: 'https://api.lendingclub.com/api/investor/v1',
+    baseUrl: require('../lib').baseUrl,
     investorId: Number(process.env.LENDING_CLUB_INVESTOR_ID),
   },
 };
