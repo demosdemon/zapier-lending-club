@@ -1,5 +1,5 @@
 /**
- *    Copyright <%= YEAR %> LeBlanc Codes, LLC
+ *    Copyright 2018 LeBlanc Codes, LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,3 +14,11 @@
  * limitations under the License.
  */
 
+const options = require('../.eslintrc');
+
+options.env.mocha = true;
+options.rules['func-names'] = 'off';
+options.rules['node/no-unpublished-require'] = 'off';
+options.rules['prefer-arrow-callback'] = 'off';
+
+module.exports = exports = options;

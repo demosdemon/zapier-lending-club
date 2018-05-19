@@ -25,6 +25,7 @@
     "url": "https://github.com/demosdemon/zapier-lending-club/issues"
   },
   "dependencies": {
+    "dotenv": "5.0.1",
     "zapier-platform-core": "6.0.0"
   },
   "devDependencies": {
@@ -36,7 +37,9 @@
     "eslint-plugin-optimize-regex": "1.1.5",
     "eslint-plugin-sonarjs": "0.1.0",
     "mocha": "5.1.1",
-    "should": "13.2.1"
+    "should": "13.2.1",
+    "tslint": "5.10.0",
+    "typescript": "2.8.3"
   },
   "eslintIgnore": [
     "!.eslintrc.js",
