@@ -15,23 +15,25 @@
  */
 
 require('should');
+
 const {load} = require('dotenv');
+load();
+
 const zapier = require('zapier-platform-core');
 
 const App = require('../index');
 const appTester = zapier.createAppTester(App);
 
+const bundle = {
+  authData: {
+    apiKey: process.env.LENDING_CLUB_API_KEY,
+    baseUrl: 'https://api.lendingclub.com/api/investor/v1',
+    investorId: Number(process.env.LENDING_CLUB_INVESTOR_ID),
+  },
+};
+
 describe('App.authentication', function() {
   it('should pass authentication', function(done) {
-    load();
-
-    const bundle = {
-      authData: {
-        apiKey: process.env.LENDING_CLUB_API_KEY,
-        investorId: Number(process.env.LENDING_CLUB_INVESTOR_ID),
-      },
-    };
-
     appTester(App.authentication.test, bundle)
       .then(function(jsonResponse) {
         jsonResponse.should.have.property('investorId');
@@ -39,5 +41,4 @@ describe('App.authentication', function() {
       })
       .catch(done);
   });
-  // intentionally blank
 });
