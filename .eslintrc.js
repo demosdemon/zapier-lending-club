@@ -236,7 +236,7 @@ const options = {
     'node/no-unpublished-import': 'error',
     'node/no-unpublished-require': 'error',
     'node/no-unsupported-features': 'error',
-    'nonblock-statement-body-position': ['error', 'beside'],
+    'nonblock-statement-body-position': ['error', 'below'],
     'notice/notice': [
       'error',
       {

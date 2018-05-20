@@ -14,29 +14,33 @@
  * limitations under the License.
  */
 
-require('should');
+const should = require('should');
+const zapier = require('zapier-platform-core');
+
+const App = require('../../index');
+const appTester = zapier.createAppTester(App);
+zapier.tools.env.inject();
 
 const {load} = require('dotenv');
 load();
+const {baseUrl} = require('../../lib/constants');
 
-const zapier = require('zapier-platform-core');
+describe('My App', function() {
+  it('should run resources.secondary_note', function(done) {
+    this.timeout(1000 * 30);
 
-const App = require('../index');
-const appTester = zapier.createAppTester(App);
-
-const bundle = {
-  authData: {
-    apiKey: process.env.LENDING_CLUB_API_KEY,
-    baseUrl: require('../lib/constants').baseUrl,
-    investorId: Number(process.env.LENDING_CLUB_INVESTOR_ID),
-  },
-};
-
-describe('App.authentication', function() {
-  it('should pass authentication', function(done) {
-    appTester(App.authentication.test, bundle)
-      .then(function(jsonResponse) {
-        jsonResponse.should.have.property('investorId');
+    const bundle = {
+      authData: {
+        apiKey: process.env.LENDING_CLUB_API_KEY,
+        baseUrl,
+        investorId: Number(process.env.LENDING_CLUB_INVESTOR_ID),
+      },
+      inputData: {},
+    };
+    debugger; // eslint-disable-line no-debugger
+    appTester(App.resources.secondary_note.list.operation.perform, bundle)
+      .then(results => {
+        should.exist(results);
         done();
       })
       .catch(done);
