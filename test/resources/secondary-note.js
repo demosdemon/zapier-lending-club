@@ -37,7 +37,7 @@ describe('My App', function() {
       },
       inputData: {},
     };
-    debugger; // eslint-disable-line no-debugger
+
     appTester(App.resources.secondary_note.list.operation.perform, bundle)
       .then(results => {
         should.exist(results);
