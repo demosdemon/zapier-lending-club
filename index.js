@@ -17,18 +17,19 @@
 const {version: platformVersion} = require('zapier-platform-core');
 const {version} = require('./package.json');
 
-const authentication = require('./lib/authentication');
-const beforeRequest = require('./lib/before-request');
 const {
-  SecondaryNoteResource,
-} = require('./lib/resources');
+  authentication,
+  beforeRequest,
+  resources,
+} = require('./lib');
+
 
 const App = {
   authentication,
-  beforeRequest: [beforeRequest],
+  beforeRequest,
   platformVersion,
   resources: {
-    [SecondaryNoteResource.key]: SecondaryNoteResource,
+    [resources.SecondaryNoteResource.key]: resources.SecondaryNoteResource,
   },
   version,
 };
