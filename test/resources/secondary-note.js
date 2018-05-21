@@ -35,7 +35,13 @@ describe('My App', function() {
         baseUrl,
         investorId: Number(process.env.LENDING_CLUB_INVESTOR_ID),
       },
-      inputData: {},
+      inputData: {
+        loanId: process.env.LENDING_CLUB_LOAN_ID,
+      },
+      meta: {
+        test_poll: false,
+        first_poll: false,
+      }
     };
 
     appTester(App.resources.secondary_note.list.operation.perform, bundle)
