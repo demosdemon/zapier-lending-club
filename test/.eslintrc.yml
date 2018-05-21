@@ -1,0 +1,26 @@
+---
+env:
+  mocha: true
+extends:
+  - '@leblanccodes'
+rules:
+  func-names: off
+  jsdoc/check-param-names: off
+  jsdoc/check-tag-names: off
+  jsdoc/check-types: off
+  jsdoc/newline-after-description: off
+  jsdoc/no-undefined-types: off
+  jsdoc/require-description-complete-sentence: off
+  jsdoc/require-hyphen-before-param-description: off
+  jsdoc/require-param-description: off
+  jsdoc/require-param-name: off
+  jsdoc/require-param-type: off
+  jsdoc/require-param: off
+  jsdoc/require-returns-description: off
+  jsdoc/require-returns-type: off
+  jsdoc/valid-types: off
+  no-invalid-this: off
+  node/no-unpublished-require: off
+  prefer-arrow-callback: off
+  require-jsdoc: off
+  valid-jsdoc: off
